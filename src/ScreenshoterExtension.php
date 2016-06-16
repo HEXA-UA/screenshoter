@@ -72,6 +72,7 @@ class ScreenshoterExtension extends \Codeception\Extension
             background: rgba(13, 34, 56, 0.8) !important;
         }
         .carousel-caption {
+            border: 1px solid white;
             background: rgba(0,0,0,0.8);
             padding-bottom: 50px !important;
         }
