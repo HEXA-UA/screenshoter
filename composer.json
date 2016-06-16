@@ -3,7 +3,7 @@
   "description" : "Extension makes screenshots after each step of test-case",
   "type" : "library",
   "keywords" : ["acceptance testing", "extension", "codeception", "selenium", "webdriver"],
-  "version" : "0.0.1",
+  "version" : "0.0.3",
   "license" : "MIT",
   "authors" : {
     "name" : "Sergij Nazarenko",
