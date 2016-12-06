@@ -246,10 +246,8 @@ EOF;
 
     public function beforeTest(\Codeception\Event\TestEvent $e)
     {
-        $matches = array();
-        preg_match('~\(([^:]+)::([^)]+)~isu', $e->getTest()->toString(), $matches);
-        $this->cestName = $matches[1].":".$matches[2];
-        $this->counter = 0;
+        $this->cestName = $e->getTest()->toString();
+        $this->counter  = 0;
     }
 
     public function afterTest(\Codeception\Event\TestEvent $e)
@@ -339,7 +337,7 @@ EOF;
         $outputText = '';
         $outputText .= "<div class='caption-header'>Action: ".$e->getStep()->getAction()."</div>";
         $outputText .= "<div class='caption-common'>Step: ".$e->getStep()->getHumanizedActionWithoutArguments().", Args: ".$e->getStep()->getHumanizedArguments()."</div>";
-        $outputText .= "<div class='caption-common'>Code:\n\t".$e->getStep()->getPhpCode()."</div>";
+        $outputText .= "<div class='caption-common'>Code:\n\t".$e->getStep()->getPhpCode(500)."</div>";
         $outputText .= "<div class='caption-common'>Line: ".$e->getStep()->getLine()."</div>";
         $outputText .= "<div class='caption-status'>Status: ".(($e->getStep()->hasFailed())?"FAILED":"PASSED")."</div>";
 
